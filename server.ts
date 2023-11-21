@@ -104,4 +104,20 @@ function addEmployee() {
 
             },
         ])
+        .then((data) => {
+            db.query(
+                `INSERT INTO employee (first_name, last_name, role_id, mananger_id) VALUES ("{$data.first_name}","{$data.last_name}","${data.roles_id}","{$data.manager_id}")`,
+                data,
+                function (err, results) {
+                    if (err) {
+                        console.log(err);
+                    }   else {
+                        console.log(err);
+                    }   else {
+                        console.log(results);
+                        dashboard();
+                    }
+                }
+            );
+        });
 }
