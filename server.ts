@@ -111,9 +111,7 @@ function addEmployee() {
                 function (err, results) {
                     if (err) {
                         console.log(err);
-                    }   else {
-                        console.log(err);
-                    }   else {
+                    }  else {
                         console.log(results);
                         dashboard();
                     }
@@ -122,6 +120,7 @@ function addEmployee() {
         });
 }
 
+// Add a department
 function addDepartment() {
     inquirer
         .prompt([
