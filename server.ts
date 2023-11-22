@@ -145,3 +145,45 @@ function addDepartment() {
             )
         })
 }
+
+function addRoles() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "Enter role you wish to add.",
+                name: "title",
+            },
+            {
+                type: "number",
+                message: "What is the estimated salary for this role?"
+                name: "salary",
+            },
+            {
+                type: "number",
+                message: "Enter the department related to the selected role.",
+                name: "department_id",
+            },
+        ])
+        .then((data) => {
+            db.query(
+                `INSERT INTO roles (titles, salary, department_id)VALUES ("${data.title}","${data.salary}","${data.department_id}")`,
+                data,
+                function (err, results) {
+                    if (err) {
+                        console.log(err);
+                    }   else {
+                        console.log(results);
+                        dashboard();
+                    }
+                }
+            );
+        });
+}
+
+// This section where I creater my badass ASCII logo
+console.log(
+    logo({
+        name: ""
+    })
+)

@@ -4,6 +4,7 @@
   "description": "Module 12 Challenge for the UTA Full-Stack Bootcamp.",
   "main": "dist/server.js",
   "scripts": {
+    "dev": "tsc && node dist/server.js",
     "start": "node dist/server.js",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
