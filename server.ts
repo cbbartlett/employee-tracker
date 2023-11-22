@@ -121,3 +121,28 @@ function addEmployee() {
             );
         });
 }
+
+function addDepartment() {
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: "Enter the name of the department you wish to add."
+                name: "department_name",
+            }
+        ])
+        .then((data) => {
+            db.query(
+                `INSERT INTO department (department_name)VALUES ("${data.department_name}")`,
+                data,
+                function (err, results) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log(results);
+                        dashboard();
+                    }
+                }
+            )
+        })
+}
