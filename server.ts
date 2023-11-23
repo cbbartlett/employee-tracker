@@ -181,9 +181,18 @@ function addRoles() {
         });
 }
 
-// This section where I creater my badass ASCII logo
+// This section where I create my badass ASCII logo
 console.log(
     logo({
-        name: ""
-    })
-)
+        name: "Edel CLI",
+        font: "3D-ASCII",
+        linechars: "12",
+        padding: "12",
+        margin: "2",
+        borderColor: "red",
+        logoColor: "bold-red",
+        textColor: "red",
+    }).render()
+);
+
+dashboard();
